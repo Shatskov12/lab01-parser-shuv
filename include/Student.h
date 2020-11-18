@@ -1,6 +1,4 @@
-//
-// Created by alesandr on 17.11.2020.
-//
+// Copyright 2020 MIX-1 <danilonil1@yandex.ru>
 
 #ifndef LAB_01_PARSER_STUDENT_H
 #define LAB_01_PARSER_STUDENT_H

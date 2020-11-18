@@ -4,7 +4,7 @@
 
 Parser::Parser(std::vector<Student> new_student) {
   students = std::move(new_student);
-  for (const auto& student: students) {
+  for (const auto& student : students) {
     if (student.ToString(FieldName[0]).length() >\
         GetWidth(FieldName[0]))
       SetWidth(FieldName[0], student.ToString(FieldName[0]).length());
@@ -59,11 +59,11 @@ std::ostream& operator<<(std::ostream &os, const Parser& parser) {
 }
 
 auto Parser::GetWidth(const string& index) const -> size_t {
-  if ( index == FieldName[0]){
+  if ( index == FieldName[0] ){
     return name_w;
-  } else if ( index == FieldName[1]){
+  } else if ( index == FieldName[1] ){
     return group_w;
-  } else if ( index == FieldName[2]){
+  } else if ( index == FieldName[2] ){
     return avg_w;
   } else if ( index == FieldName[3] ){
     return debt_w;
@@ -128,7 +128,7 @@ Parser Parser::FromFile(const string& jsonPath) {
   }
   json data;
   file >> data;
-  if(data.empty()){
+  if (data.empty()){
     throw std::runtime_error
         {"file is empty"};
   }

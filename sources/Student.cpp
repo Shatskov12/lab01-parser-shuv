@@ -1,6 +1,4 @@
-//
-// Created by alesandr on 17.11.2020.
-//
+// Copyright 2020 MIX-1 <danilonil1@yandex.ru>
 
 #include <Student.h>
 
@@ -10,7 +8,7 @@ Student::Student(string new_name, any new_group, any new_avg, any new_debt) {
   avg = std::move(new_avg);
   debt = std::move(new_debt);
 
-  if(group.type() == typeid(string)) {
+  if (group.type() == typeid(string)) {
     group_type = String;
   } else if (group.type() == typeid(int)) {
     group_type = Integer;
@@ -22,7 +20,7 @@ Student::Student(string new_name, any new_group, any new_avg, any new_debt) {
     group_type = Array;
   }
 
-  if(avg.type() == typeid(string)){
+  if (avg.type() == typeid(string)){
     avg_type = String;
   } else if (avg.type() == typeid(int)) {
     avg_type = Integer;
@@ -33,7 +31,7 @@ Student::Student(string new_name, any new_group, any new_avg, any new_debt) {
   } else if (avg.type() == typeid(std::vector<string>)) {
     avg_type = Array;
   }
-  if(debt.type() == typeid(string)){
+  if (debt.type() == typeid(string)){
     debt_type = Student::String;
   } else if (debt.type() == typeid(nullptr)) {
     debt_type = Null;
@@ -92,7 +90,7 @@ bool Student::operator==(const Student& student) const {
     result = false;
   }
 
-  if(group_type != student.group_type) {
+  if (group_type != student.group_type) {
     result = false;
   } else {
     if (group_type == String) {
@@ -102,7 +100,7 @@ bool Student::operator==(const Student& student) const {
       result = std::any_cast<int>(group) == std::any_cast<int>(student.group);
     }
   }
-  if(avg_type != student.avg_type) {
+  if (avg_type != student.avg_type) {
     result = false;
   } else {
     if (avg_type == String) {
@@ -115,7 +113,7 @@ bool Student::operator==(const Student& student) const {
             std::any_cast<double>(student.avg);
     }
   }
-  if(debt_type != student.debt_type) {
+  if (debt_type != student.debt_type) {
     result = false;
   } else {
     if (debt_type == String) {

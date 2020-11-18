@@ -1,12 +1,10 @@
-//
-// Created by alesandr on 17.11.2020.
-//
+// Copyright 2020 MIX-1 <danilonil1@yandex.ru>
+
 
 #include <gtest/gtest.h>
 #include <Parser.hpp>
 
 TEST(Parser_Test, Print) {
-
       const char j_string[] =\
 R"({"name": "Ivan Ivanov", "group": "IU10-39", "avg": "4", "debt": "C++"})";
       json j = json::parse(j_string);
@@ -22,7 +20,7 @@ R"({"name": "Ivan Ivanov", "group": 39, "avg": 4, "debt": null})";
       j = json::parse(j_string2);
       Student Petr(j);
 
-Parser parser (std::vector<Student>{Petr, Ivan, Nikita});
+Parser parser(std::vector<Student>{Petr, Ivan, Nikita});
 
   std::stringstream parser_stream;
   parser_stream << parser;
@@ -162,7 +160,7 @@ R"({
   true_file.close();
   std::stringstream parser_stream1;
   parser_stream1 << Parser::FromFile("true_file.json");
-  EXPECT_EQ( parser_stream1.str(), table_true);
+  EXPECT_EQ(parser_stream1.str(), table_true);
   std::stringstream parser_stream2;
   parser_stream2 << Parser::FromString(json_string1);
   EXPECT_EQ(parser_stream2.str(), table_true);
