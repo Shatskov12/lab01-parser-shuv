@@ -28,6 +28,7 @@ class Parser {
   size_t group_w = 5;
   size_t avg_w = 3;
   size_t debt_w = 4;
+
  public:
   explicit Parser(std::vector<Student>);
 
