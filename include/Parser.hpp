@@ -22,14 +22,12 @@ using std :: setfill;
 using std :: any_cast;
 
 class Parser {
-
  private:
   std::vector<Student> students;
   size_t name_w = 4;
   size_t group_w = 5;
   size_t avg_w = 3;
   size_t debt_w = 4;
-  
  public:
   explicit Parser(std::vector<Student>);
 

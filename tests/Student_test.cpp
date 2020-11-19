@@ -25,8 +25,10 @@ R"(
 "debt": "C++"
 })";
   Student student1(json::parse(json_string1));
-  EXPECT_TRUE(student1 == 
-  Student("Ivan Ivanov", string("IU10-39"), string("4"), string("C++")));
+  EXPECT_TRUE(student1 == Student("Ivan Ivanov",
+                                  string("IU10-39"),
+                                  string("4"),
+                                  string("C++")));
   string json_string2 =\
 R"(
 {
@@ -50,13 +52,12 @@ R"(
       ]
 })";
   Student student3(json::parse(json_string3));
-  EXPECT_TRUE(student3 == 
-   Student(
-   "Ivan Ivanov",
-   string("Nine"),
-   3.33,
-   std::vector<string>{"C++", "Linux", "Network"})
-   );
+  EXPECT_TRUE(student3 == Student("Ivan Ivanov",
+                                  string("Nine"),
+                                  3.33,
+                                  std::vector<string>{"C++",
+                                                      "Linux",
+                                                      "Network"}));
 }
 TEST(Student_Test, Student_Bad_Filling) {
   string json_string1 =\
@@ -68,13 +69,12 @@ R"(
 "debt": null
 })";
   Student student1(json::parse(json_string1));
-  EXPECT_FALSE(student1 == 
-  Student(
-   "Petr Ivanov",
-   39.10,
-   nullptr, 
-   std::vector<string>{"C++", "Linux", "Network"})
-   );
+  EXPECT_FALSE(student1 ==Student("Petr Ivanov",
+                                   39.10,
+                                   nullptr,
+                                   std::vector<string>{"C++",
+                                                       "Linux",
+                                                       "Network"}));
   string json_string2 =\
 R"(
 {
@@ -84,13 +84,14 @@ R"(
 "debt": null
 })";
   Student student2(json::parse(json_string2));
-  EXPECT_FALSE(student1 ==
-  Student(
-  "Petr Ivanov", 
-  std::vector<string>{"C++", "Linux", "Network"}, 
-  std::vector<string>{"C++", "Linux", "Network"}, 
-  2)
-  );
+  EXPECT_FALSE(student1 ==Student("Petr Ivanov",
+                                   std::vector<string>{"C++",
+                                                       "Linux",
+                                                       "Network"},
+                                   std::vector<string>{"C++",
+                                                       "Linux",
+                                                       "Network"},
+                                   2));
   string json_string3 =\
 R"(
 {
@@ -100,13 +101,12 @@ R"(
 "debt": null
 })";
   Student student3(json::parse(json_string3));
-  EXPECT_FALSE(student1 == 
-  Student(
-  "Petr Ivanov", 
-  nullptr, 
-  std::vector<string>{"C++", "Linux", "Network"}, 
-  2.10)
-  );
+  EXPECT_FALSE(student1 ==Student("Petr Ivanov",
+                                   nullptr,
+                                   std::vector<string>{"C++",
+                                                       "Linux",
+                                                       "Network"},
+                                   2.10));
 }
 TEST(Student_Test, Incorect_Group) {
   string json_string1 =\
