@@ -2,7 +2,7 @@
 
 | branch | status |
 |--------|--------|
-| nemaster    |[![Build Status](https://travis-ci.org/MIX-1/lab01-parser-dda2.svg?branch=testing)](https://travis-ci.org/github/MIX-1/lab01-parser-dda2)|
+| testing    |[![Build Status](https://travis-ci.org/MIX-1/lab01-parser-dda2.svg?branch=testing)](https://travis-ci.org/github/MIX-1/lab01-parser-dda2)|
 
 ## Задание
 
