@@ -1,5 +1,9 @@
 # Лабораторная работа № 1
 
+| branch | status |
+|--------|--------|
+| nemaster    |[![Build Status](https://travis-ci.org/MIX-1/lab01-parser-dda2.svg?branch=testing)](https://travis-ci.org/github/MIX-1/lab01-parser-dda2)|
+
 ## Задание
 
 Реализовать утилиту табличного вывода массива данных, хранящихся в файле формата **JSON**.<br />
