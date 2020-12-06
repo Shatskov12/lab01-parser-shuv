@@ -24,36 +24,36 @@ using std :: any_cast;
 const string FieldName[4] = {"name", "group", "avg", "debt"};
 
 struct Student {
- public:
-  enum Type {
-    Null,
-    String,
-    Integer,
-    Array,
-    Double};
+public:
+    enum Type {
+        Null,
+        String,
+        Integer,
+        Array,
+        Double};
 
-  explicit Student(json);
+    explicit Student(json);
 
-  explicit Student(string, any, any, any);
+    explicit Student(string, any, any, any);
 
-  bool operator==(const Student&) const;
+    bool operator==(const Student&) const;
 
-  string ToString(const string&) const;
+    string To_String(const string&) const;
 
-  auto GetType(const string&) const -> Type;
+    auto Get_Type(const string&) const -> Type;
 
-  auto GetField(const string&) const -> any;
+    auto Get_Field(const string&) const -> any;
 
- private:
-  string name;
-  any group;
-  any avg;
-  any debt;
+private:
+    string name;
+    any group;
+    any avg;
+    any debt;
 
-  Type name_type = String;
-  Type group_type;
-  Type avg_type;
-  Type debt_type;
+    Type name_type = String;
+    Type group_type;
+    Type avg_type;
+    Type debt_type;
 };
 
 #endif  // LAB_01_PARSER_STUDENT_H

@@ -22,33 +22,35 @@ using std :: setfill;
 using std :: any_cast;
 
 class Parser {
- private:
-  std::vector<Student> students;
-  size_t name_w = 4;
-  size_t group_w = 5;
-  size_t avg_w = 3;
-  size_t debt_w = 4;
+private:
+    std::vector<Student> students;
+    size_t name_w;
+    size_t group_w;
+    size_t avg_w;
+    size_t debt_w;
 
- public:
-  explicit Parser(std::vector<Student>);
+public:
+    explicit Parser(std::vector<Student>);
 
-  auto GetWidth(const string&) const -> size_t;
+    auto Get_Width(const string&) const -> size_t;
 
-  void SetWidth(const string&, size_t);
+    void Set_Width(const string&, size_t);
 
-  auto GetVector() const -> std::vector<Student>;
+    auto Get_Vector() const -> std::vector<Student>;
 
-  void Print(const Student& student, std::ostream& os) const;
+    void Print_students(const Student& student, std::ostream& os) const;
 
-  void Filler(std::ostream& os) const;
+    void Filler_separation(std::ostream& os) const;
 
-  static void Filler(size_t size, size_t len, std::ostream& os);
+    static void Filler(size_t difference, std::ostream& os);
 
-  static Parser FromFile(const string&);
+    void Filler_top(std::ostream& os, const Parser& parser) const;
 
-  static Parser FromString(const string&);
+    static Parser From_File(const string&);
 
-  friend std::ostream& operator<<(std::ostream&, const Parser&);
+    static Parser From_String(const string&);
+
+    friend std::ostream& operator<<(std::ostream&, const Parser&);
 };
 
 #endif // INCLUDE_JSONPARSER_HPP_
