@@ -2,12 +2,6 @@
 
 #include <Student.h>
 
-//
-// Created by alesandr on 17.11.2020.
-//
-
-#include <Student.h>
-
 Student::Student(string new_name, any new_group, any new_avg, any new_debt) {
     name = std::move(new_name);
     group = std::move(new_group);
@@ -101,20 +95,25 @@ bool Student::operator==(const Student& student) const {
     } else {
         if (group_type == String) {
             result =
-                    std::any_cast<string>(group) == std::any_cast<string>(student.group);
+                    std::any_cast<string>(group) ==
+                            std::any_cast<string>(student.group);
         } else if (group_type == Integer) {
-            result = std::any_cast<int>(group) == std::any_cast<int>(student.group);
+            result = std::any_cast<int>(group) ==
+                    std::any_cast<int>(student.group);
         }
     }
     if (avg_type != student.avg_type) {
         result = false;
     } else {
         if (avg_type == String) {
-            result = std::any_cast<string>(avg) == std::any_cast<string>(student.avg);
+            result = std::any_cast<string>(avg) ==
+                    std::any_cast<string>(student.avg);
         } else if (avg_type == Integer) {
-            result = std::any_cast<int>(avg) == std::any_cast<int>(student.avg);
+            result = std::any_cast<int>(avg) ==
+                            std::any_cast<int>(student.avg);
         } else if (avg_type == Double) {
-            result = std::any_cast<double>(avg) == std::any_cast<double>(student.avg);
+            result = std::any_cast<double>(avg) ==
+                            std::any_cast<double>(student.avg);
         }
     }
     if (debt_type != student.debt_type) {
@@ -122,7 +121,8 @@ bool Student::operator==(const Student& student) const {
     } else {
         if (debt_type == String) {
             result =
-                    std::any_cast<string>(debt) == std::any_cast<string>(student.debt);
+                    std::any_cast<string>(debt) ==
+                            std::any_cast<string>(student.debt);
         } else if (debt_type == Null) {
             result = true;
         } else if (debt_type == Array) {

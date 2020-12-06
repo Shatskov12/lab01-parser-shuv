@@ -6,13 +6,17 @@ Parser::Parser(std::vector<Student> new_student)
         : name_w(4), group_w(5), avg_w(3), debt_w(4) {
     students = std::move(new_student);
     for (const auto& student : students) {
-        if (student.To_String(Field_Name[0]).length() > Get_Width(Field_Name[0]))
+        if (student.To_String(Field_Name[0]).length() >
+        Get_Width(Field_Name[0]))
             Set_Width(Field_Name[0], student.To_String(Field_Name[0]).length());
-        if (student.To_String(Field_Name[1]).length() > Get_Width(Field_Name[1]))
+        if (student.To_String(Field_Name[1]).length() >
+        Get_Width(Field_Name[1]))
             Set_Width(Field_Name[1], student.To_String(Field_Name[1]).length());
-        if (student.To_String(Field_Name[2]).length() > Get_Width(Field_Name[2]))
+        if (student.To_String(Field_Name[2]).length() >
+        Get_Width(Field_Name[2]))
             Set_Width(Field_Name[2], student.To_String(Field_Name[2]).length());
-        if (student.To_String(Field_Name[3]).length() > Get_Width(Field_Name[3]))
+        if (student.To_String(Field_Name[3]).length() >
+        Get_Width(Field_Name[3]))
             Set_Width(Field_Name[3], student.To_String(Field_Name[3]).length());
     }
 }
@@ -115,7 +119,8 @@ Parser Parser::From_File(const string& json_Path) {
         throw std::runtime_error{"file is empty"};
     }
     if (!data.at("items").is_array()) {
-        throw std::runtime_error{"incorrect items field, items should be an array"};
+        throw std::runtime_error{"incorrect items field,"
+                                 " items should be an array"};
     }
     if (data.at("items").size() != data.at("_meta").at("count").get<size_t>()) {
         throw std::runtime_error{
@@ -133,7 +138,8 @@ Parser Parser::From_File(const string& json_Path) {
 Parser Parser::From_String(const string& json_String) {
     json data = json::parse(json_String);
     if (!data.at("items").is_array()) {
-        throw std::runtime_error{"incorrect items field, items should be an array"};
+        throw std::runtime_error{"incorrect items field,"
+                                 " items should be an array"};
     }
     if (data.at("items").size() != data.at("_meta").at("count").get<size_t>()) {
         throw std::runtime_error{
