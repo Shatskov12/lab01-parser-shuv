@@ -38,7 +38,7 @@ Parser parser(std::vector<Student>{Petr, Ivan, Nikita});
 
   EXPECT_TRUE(ref_string == parser_stream.str());
 }
-TEST(Parser_Test, EmptyStudents) {
+TEST(Parser_Test, Empty_Students) {
   Parser parser(std::vector<Student>{});
   std::stringstream res;
   res << parser;
@@ -47,11 +47,11 @@ TEST(Parser_Test, EmptyStudents) {
 |----|-----|---|----|
 )";
   EXPECT_EQ(res.str(), ref_str);
-  EXPECT_EQ(parser.GetWidth(""), 0);
+  EXPECT_EQ(parser.Get_Width(""), 0);
 }
 TEST(Parser_Test, File_Open_Bad) {
   try {
-    Parser::FromFile("Bad_File.json");
+    Parser::From_File("Bad_File.json");
   } catch (std::runtime_error& e) {
     EXPECT_TRUE(e.what() == string("unable to open file"));
   }
@@ -86,13 +86,13 @@ R"({
   true_file << json_string1;
   true_file.close();
   try {
-    Parser::FromFile("true_file.json");
+    Parser::From_File("true_file.json");
   } catch (std::runtime_error& e) {
     EXPECT_TRUE(e.what() ==
                 string("incorrect items field, items should be an array"));
   }
   try {
-    Parser::FromString(json_string1);
+    Parser::From_String(json_string1);
   } catch (std::runtime_error& e) {
     EXPECT_TRUE(e.what() ==
                 string("incorrect items field, items should be an array"));
@@ -118,14 +118,14 @@ R"({
   true_file << json_string1;
   true_file.close();
   try {
-    Parser::FromFile("true_file.json");
+    Parser::From_File("true_file.json");
   } catch (std::runtime_error& e) {
     EXPECT_TRUE(e.what() ==
                 string(R"(incorrect count field, count at meta
      should be equal items field size)"));
   }
   try {
-    Parser::FromString(json_string1);
+    Parser::From_String(json_string1);
   } catch (std::runtime_error& e) {
     EXPECT_TRUE(e.what() ==
                 string(R"(incorrect count field, count at meta
@@ -159,9 +159,9 @@ R"({
   true_file << json_string1;
   true_file.close();
   std::stringstream parser_stream1;
-  parser_stream1 << Parser::FromFile("true_file.json");
+  parser_stream1 << Parser::From_File("true_file.json");
   EXPECT_EQ(parser_stream1.str(), table_true);
   std::stringstream parser_stream2;
-  parser_stream2 << Parser::FromString(json_string1);
+  parser_stream2 << Parser::From_String(json_string1);
   EXPECT_EQ(parser_stream2.str(), table_true);
 }
