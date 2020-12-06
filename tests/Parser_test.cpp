@@ -64,7 +64,7 @@ R"({})";
   true_file << json_string1;
   true_file.close();
   try {
-    Parser::FromFile("true_file.json");
+    Parser::From_File("true_file.json");
   } catch (std::runtime_error& e) {
     EXPECT_TRUE(e.what() == string("file is empty"));
   }
