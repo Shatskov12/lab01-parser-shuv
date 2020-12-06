@@ -11,8 +11,8 @@ TEST(Student_Test, EmptyIndex){
       R"({"name": "Ivan Ivanov", "group": 9, "avg": 4, "debt": null})";
   Student emptyStudent((json::parse(j_string)));
 
-  EXPECT_EQ(emptyStudent.GetType(""), Student::Null);
-  EXPECT_EQ(std::any_cast<std::nullptr_t>(emptyStudent.GetField("")), \
+  EXPECT_EQ(emptyStudent.Get_Type(""), Student::Null);
+  EXPECT_EQ(std::any_cast<std::nullptr_t>(emptyStudent.Get_Field("")), \
       nullptr);
 }
 TEST(Student_Test, Student_Good_Filling) {
