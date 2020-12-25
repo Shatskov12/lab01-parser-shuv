@@ -1,17 +1,17 @@
-// Copyright 2020 MIX-1 <danilonil1@yandex.ru>
+// Copyright 2020 Shatskov12 <qweser2016@mail.ru>
 
 #ifndef INCLUDE_JSONPARSER_HPP_
 #define INCLUDE_JSONPARSER_HPP_
 #pragma once
+#include <Student.hpp>
 #include <any>
-#include <string>
+#include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <nlohmann/json.hpp>
-#include <vector>
-#include <iomanip>
-#include <fstream>
 #include <sstream>
-#include <Student.h>
+#include <string>
+#include <vector>
 using json = nlohmann::json;
 using string = std :: string;
 using any = std :: any;

@@ -1,7 +1,7 @@
-// Copyright 2020 MIX-1 <danilonil1@yandex.ru>
+// Copyright 2020 Shatskov12 <qweser2016@mail.ru>
 
-#ifndef LAB_01_PARSER_STUDENT_H
-#define LAB_01_PARSER_STUDENT_H
+#ifndef LAB_01_PARSER_STUDENT_HPP
+#define LAB_01_PARSER_STUDENT_HPP
 #pragma once
 #include <any>
 #include <string>
@@ -56,4 +56,4 @@ private:
     Type debt_type;
 };
 
-#endif  // LAB_01_PARSER_STUDENT_H
+#endif  // LAB_01_PARSER_STUDENT_HPP

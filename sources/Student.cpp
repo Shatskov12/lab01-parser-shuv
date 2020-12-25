@@ -1,6 +1,6 @@
-// Copyright 2020 MIX-1 <danilonil1@yandex.ru>
+// Copyright 2020 Shatskov12 <qweser2016@mail.ru>
 
-#include <Student.h>
+#include <Student.hpp>
 
 Student::Student(string new_name, any new_group, any new_avg, any new_debt) {
     name = std::move(new_name);

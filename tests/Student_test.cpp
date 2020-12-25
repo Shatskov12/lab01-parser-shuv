@@ -1,7 +1,8 @@
-// Copyright 2020 MIX-1 <daniloniL1@yandex.ru>
+// Copyright 2020 Shatskov12 <qweser2016@mail.ru>
 
 #include <gtest/gtest.h>
-#include <Student.h>
+
+#include <Student.hpp>
 
 TEST(Example, EmptyTest) {
     EXPECT_TRUE(true);
