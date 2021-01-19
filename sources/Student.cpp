@@ -8,6 +8,7 @@ Student::Student(string new_name, any new_group, any new_avg, any new_debt) {
     avg = std::move(new_avg);
     debt = std::move(new_debt);
 
+
     if (group.type() == typeid(string)) {
         group_type = String;
     } else if (group.type() == typeid(int)) {
