@@ -51,6 +51,8 @@ public:
     static Parser From_String(const string&);
 
     friend std::ostream& operator<<(std::ostream&, const Parser&);
+
+    const string Field_Name[4] = {"name", "group", "avg", "debt"};
 };
 
 #endif // INCLUDE_JSONPARSER_HPP_

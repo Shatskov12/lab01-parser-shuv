@@ -21,7 +21,7 @@ using std :: runtime_error;
 using std :: setfill;
 using std :: any_cast;
 
-const char Field_Name[4][6] = {"name", "group", "avg", "debt"};
+//const string Field_Name[4] = {"name", "group", "avg", "debt"};
 
 struct Student {
 public:
@@ -43,6 +43,7 @@ public:
     auto Get_Type(const string&) const -> Type;
 
     auto Get_Field(const string&) const -> any;
+    const string Field_Name[4] = {"name", "group", "avg", "debt"};
 
 private:
     string name;
