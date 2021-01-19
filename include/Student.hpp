@@ -21,7 +21,7 @@ using std :: runtime_error;
 using std :: setfill;
 using std :: any_cast;
 
-const string Field_Name[4] = {"name", "group", "avg", "debt"};
+const char Field_Name[4][6] = {"name", "group", "avg", "debt"};
 
 struct Student {
 public:
