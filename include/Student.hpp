@@ -13,7 +13,7 @@
 #include <sstream>
 
 using json = nlohmann::json;
-using string = std :: string;
+using std :: string;
 using any = std :: any;
 using std :: cout;
 using std :: setw;
